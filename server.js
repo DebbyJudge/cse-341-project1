@@ -1,7 +1,17 @@
- const express = require("express");
- const app = express();
+const express = require("express");
+const mongodb = require("./data/database");
+const app = express();
 
- const port = proces.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
+app.use("/", require("./routes")); // Correct the path to routes
 
- app.listen(port, () => {console.log("Running on port ${port}")});
+mongodb.initDb((err) => { // Correct arrow function syntax
+    if (err) {
+        console.log(err);
+    } else {
+        app.listen(port, () => {
+            console.log(`Database is listening and node Running on port ${port}`); // Use backticks for template literals
+        });
+    }
+});
