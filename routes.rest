@@ -1,0 +1,40 @@
+// LOCALHOST
+### Get all contats
+GET http://localhost:8080/contacts
+
+### Get contact by id
+GET http://localhost:8080/contacts/66ef7e0981c06cd9b3f082ca
+
+// PRODUCTION
+### Get all contats
+GET https://cse341-project1-ascp.onrender.com/contacts
+
+### Get contact by id
+GET https://cse341-project1-ascp.onrender.com/contacts/66ef7e0981c06cd9b3f082ca
+
+### Add a contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Test",
+    "lastName": "010",
+    "email": "danny.ellis@example.com",
+    "favoriteColor": "green",
+    "birthday": "2005-03-14"
+}
+
+### Update a contact
+PUT http://localhost:8080/contacts/66ef7e0981c06cd9b3f082ca
+Content-Type: application/json
+
+{
+    "firstName": "Test",
+    "lastName": "003",
+    "email": "danny.ellis@example.com",
+    "favoriteColor": "green",
+    "birthday": "1992-04-16"
+}
+
+### Get contact by id
+DELETE http://localhost:8080/contacts/66f86e2640ceb14eebe42081
